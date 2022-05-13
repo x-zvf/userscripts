@@ -44,7 +44,7 @@ function login() {
         if(loginButton) {
             loginButton.dispatchEvent(new MouseEvent("click"));
         }
-        var shibButton = shibButton = document.getElementById("button_shib_login")
+        var shibButton = document.getElementById("button_shib_login")
         if(shibButton) {
             shibButton.dispatchEvent(new MouseEvent("click"));
         }
