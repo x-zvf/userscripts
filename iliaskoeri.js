@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Ilias[kœri]
-// @version      1.0
+// @version      1.1
 // @description  [kœri] makes everything better; Automate the login process to KIT's ilias.
 // @author       xzvf (Péter Bohner)
 // @match        https://ilias.studium.kit.edu/*
@@ -40,8 +40,8 @@ function login() {
            }
         }
 
-        var loginButton = Array.from(document.getElementsByTagName("button")).filter(x => /login.php\?target=root_1.*/.test(x.getAttribute("data-action")))[0];
-        if(loginButton) {
+        var loginButton = Array.from(document.getElementsByTagName("a")).filter(x => /login.php\?.*/.test(x.getAttribute("href")))[0]
+        if(loginButton && !/login.php\?.*/.test(location.href)) {
             loginButton.dispatchEvent(new MouseEvent("click"));
         }
         var shibButton = document.getElementById("button_shib_login")
