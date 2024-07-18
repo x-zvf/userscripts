@@ -50,7 +50,7 @@ function login() {
         }
     } else if (shiboUrl.test(location.href)) {
         if (shouldAutofill) {
-            document.getElementById("name").value = username;
+            document.getElementById("username").value = username;
             document.getElementById("password").value = password;
             login();
         } else {
